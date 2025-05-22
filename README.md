@@ -32,10 +32,12 @@ This project simulates real-world backend logic — including authentication, fi
 ## 💻 Setup Instructions
 
 you can clone this repo and run in your computer to see it working:
+
 - Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/timetracker.git
-   cd timetracker
+  ```bash
+  git clone https://github.com/JonathanRaposo/TIME-TRACKER-APP.git
+  cd timetracker
+  ```
 - npm install
 - npm run dev
 - visit http://localhost:5000
