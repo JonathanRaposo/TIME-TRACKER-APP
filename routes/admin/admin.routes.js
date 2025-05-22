@@ -29,7 +29,7 @@ router.get('/admin/manage/employee', async function (req, res) {
 })
 
 router.get('/admin/employees/add', function (req, res) {
-    res.render('auth/add.hbs')
+    res.render('auth/add.hbs', { layout: false })
 })
 
 

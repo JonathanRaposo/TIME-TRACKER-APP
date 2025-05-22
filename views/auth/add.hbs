@@ -1,6 +1,39 @@
 
-    
-<form action="/admin/employees/add" Method="POST" id="signup-form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+      <nav id="admin-dashboard">
+        <div>
+            <a href="/admin/dashboard">Dashboard</a>
+        </div>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+              <li>
+                <a href="/admin/employees">Employees</a>
+            </li>
+            <li>
+                <a href="/admin/manage/employee?id={{user.id}}">Manage</a>
+            </li>
+          
+            <li>
+                <form action="/admin/logout" method="POST">
+                 <button type= "submit" class="logout-link">Log out</button>
+                 </form>
+            </li>
+        </ul>
+    </nav>
+
+
+    <form action="/admin/employees/add" Method="POST" id="signup-form">
 
     <h2>Create Account</h2>
 
@@ -24,3 +57,7 @@
     {{/if}}
 
 </form>
+
+    
+</body>
+</html>

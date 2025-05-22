@@ -1,12 +1,12 @@
 [
   {
     "id": "admin001",
-    "firstName": "Jonathan",
+    "firstName": "jonathan",
     "lastName": "Raposo",
     "email": "jonathanradmin@gmail.com",
-    "password": "$2b$10$64HXzN.QQqMqKE8cOobkMu9uDRPzKw5WKQWsxh5zHTqqpiY8Gk2w2",
+    "password": "$2b$10$mFy3w.9YWX88rYpHqO2YkuEJgrWox3KZCiv.5jaD7q5vSGivMCfUW",
     "role": "admin",
-    "createdAt": "2025-05-22T13:31:13.144Z"
+    "createdAt": "2025-05-22T14:59:11.147Z"
   },
   {
     "id": "003",
@@ -47,4 +47,5 @@
     "password": "$2b$12$iAphQvQdp22OlwKWAOmjuOzgOd4j9nO.EjTWF6j.mv91PGDyeSB32",
     "updatedAt": "2025-05-22T14:46:00.922Z"
   }
+ 
 ]
