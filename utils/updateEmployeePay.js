@@ -7,30 +7,28 @@
  */
 
 
-const payload = {
-    "employeeId": "003",
-    "createdAt": "2025-04-30T21:20:39.078Z",
-    "hourlyRate": 20,
-    "hoursWorked": 30,
-    "acumulatedPay": 20,
-    "firstName": "Anne",
-    "lastName": "Smith",
-    "email": "anne@gmail.com",
-    "password": "$2b$10$phgM8HmHDNMYeFtNwToDBeKw2DhXlAoAZFO11NiqtwV/a0uGyGP32",
-    "role": "employee"
-}
+// const payload = {
+//     "employeeId": "003",
+//     "createdAt": "2025-04-30T21:20:39.078Z",
+//     "hourlyRate": 20,
+//     "hoursWorked": 30,
+//     "accumulatedPay": 0,
+//     "firstName": "Anne",
+//     "lastName": "Smith",
+//     "email": "anne@gmail.com",
+//     "password": "$2b$10$phgM8HmHDNMYeFtNwToDBeKw2DhXlAoAZFO11NiqtwV/a0uGyGP32",
+//     "role": "employee"
+// }
 
 
 function processHours(workSession) {
 
     const now = Math.floor(Date.now() / 1000);
     const duration = now - workSession.clockedInAt;
-    const hours = duration / (60 * 60); //convert seconds to hours
-    const hourlyRate = workSession.hourlyRate;
+    const hours = duration / (60 * 60); //convert seconds to hour
 
     return {
-        hours: parseFloat(hours.toFixed(2)),
-        totalPay: parseFloat((hours * hourlyRate).toFixed(2))
+        hours: parseFloat(hours.toFixed(2))
     }
 
 }
@@ -45,9 +43,14 @@ function processHours(workSession) {
  */
 
 function updateEmployeePay(employee, workSession) {
-    const { hours, totalPay } = processHours(workSession);
-    const updatedEmployee = Object.assign({}, employee,
-        { hoursWorked: employee.hoursWorked + hours, accumulatedPay: employee.accumulatedPay + totalPay });
+    const { hours } = processHours(workSession);
+    const updatedHours = employee.hoursWorked + hours;
+    const updatedPay = updatedHours * employee.hourlyRate;
+
+    const updatedEmployee = Object.assign({}, employee, {
+        hoursWorked: parseFloat(updatedHours.toFixed(2)),
+        accumulatedPay: parseFloat(updatedPay.toFixed(2))
+    })
     return updatedEmployee;
 }
 

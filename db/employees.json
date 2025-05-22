@@ -3,27 +3,27 @@
     "id": "001",
     "createdAt": "2025-04-30T21:17:00.733Z",
     "hourlyRate": 18,
-    "hoursWorked": 35,
-    "accumulatedPay": 630,
+    "hoursWorked": 24.28,
+    "accumulatedPay": 437.04,
     "firstName": "Jonathan",
     "lastName": "Raposo Luna",
     "email": "jonathan.raposo.luna@gmail.com",
     "password": "$2b$10$ksGc5TlueZ64Ed4ltBX9kOekkpUlRQ3orzVToHhfQxyhRnDsS1j2m",
     "role": "employee",
-    "updatedAt": "2025-05-22T10:40:23.999Z"
+    "updatedAt": "2025-05-22T12:45:00.665Z"
   },
   {
     "id": "003",
     "createdAt": "2025-04-30T21:20:39.078Z",
     "hourlyRate": 20,
-    "hoursWorked": 20,
-    "accumulatedPay": 0,
+    "hoursWorked": 2,
+    "accumulatedPay": 40,
     "firstName": "Anne",
     "lastName": "Smith",
     "email": "anne@gmail.com",
     "password": "$2b$10$phgM8HmHDNMYeFtNwToDBeKw2DhXlAoAZFO11NiqtwV/a0uGyGP32",
     "role": "employee",
-    "updatedAt": "2025-05-07T07:22:20.725Z"
+    "updatedAt": "2025-05-22T12:46:13.810Z"
   },
   {
     "id": "admin001",
@@ -36,14 +36,15 @@
   },
   {
     "id": "004",
-    "createdAt": "2025-05-22T11:36:07.876Z",
-    "hourlyRate": 0,
-    "hoursWorked": 0,
-    "accumulatedPay": 0,
+    "createdAt": "2025-05-22T12:52:57.212Z",
+    "hourlyRate": 16,
+    "hoursWorked": 2,
+    "accumulatedPay": 32,
     "role": "employee",
     "firstName": "John",
     "lastName": "Doe",
     "email": "john@gmail.com",
-    "password": "$2b$12$mHBBjTKkLe91NjrlqC0bne0y7VwxDTni7CC3WyXiqv9GUWSmjOv4K"
+    "password": "$2b$12$LZ2lU9.X/Ae2XkP/pVjqDujWUaxD8lw3YUVasTSrqHuuDibfVcQcS",
+    "updatedAt": "2025-05-22T13:07:43.523Z"
   }
 ]

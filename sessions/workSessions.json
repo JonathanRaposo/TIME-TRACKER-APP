@@ -1,7 +1,17 @@
 {
   "003": {
     "employeeId": "003",
-    "clockedInAt": 1747910119,
+    "clockedInAt": 1747916438,
     "hourlyRate": 20
+  },
+  "004": {
+    "employeeId": "004",
+    "clockedInAt": 1747918610,
+    "hourlyRate": 16
+  },
+  "001": {
+    "employeeId": "001",
+    "clockedInAt": 1747918820,
+    "hourlyRate": 18
   }
 }
