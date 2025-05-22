@@ -31,7 +31,7 @@ This project simulates real-world backend logic — including authentication, fi
 
 ## 💻 Setup Instructions
 
-you can clone this repo and run in your computer to see it working:
+you can clone this repo and run in your computer to see it work:
 
 - Clone the repo:
   ```bash
