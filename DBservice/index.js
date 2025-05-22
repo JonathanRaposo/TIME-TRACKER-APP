@@ -3,8 +3,8 @@ const path = require('path');
 
 
 function generateId() {
-    const nextId = this.db.length + 1;
-    return String(nextId).padStart(3, '0');
+    const id = Math.random() * this.db.length + 1;
+    return String(id).padStart(3, '0');
 }
 
 function connectDB(filePath) {

@@ -10,12 +10,10 @@ const DbService = new DBService(db)
 const isAuthenticated = require('../../middleware/isAuthenticated.js')
 
 router.get('/employee/profile', isAuthenticated, function (req, res) {
-    console.log(req)
     res.render('employee/profile.hbs', { user: req.payload, layout: false })
 });
 
 router.get('/employee/hours', isAuthenticated, async function (req, res) {
-    console.log(req.payload)
     const { id } = req.payload;
     try {
         const user = await DbService.findById(id);

@@ -8,10 +8,5 @@
     "employeeId": "004",
     "clockedInAt": 1747918610,
     "hourlyRate": 16
-  },
-  "001": {
-    "employeeId": "001",
-    "clockedInAt": 1747918820,
-    "hourlyRate": 18
   }
 }

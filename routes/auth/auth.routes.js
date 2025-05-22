@@ -18,7 +18,7 @@ router.get('/signup', isLoggedOut, (req, res) => {
 });
 
 router.post('/signup', isLoggedOut, async function (req, res, next) {
-    console.log(req.body)
+   
     const { firstName, lastName, email, password } = req.body;
 
     // MAKE SURE ALL FIELDS ARE PROVIDED
@@ -49,7 +49,6 @@ router.post('/signup', isLoggedOut, async function (req, res, next) {
         }
 
         const newUser = { firstName, lastName, email, password: hash(password, { saltRounds: 12 }) };
-        console.log('new User:', newUser)
         const user = await dbService.create(newUser);
         const payload = {
             id: user.id,
