@@ -8,8 +8,8 @@ const DB_FILEPATH = path.join(__dirname, '..', 'db', 'employees.json');
 
 const adminUser = {
     id: 'admin001',
-    firstName: 'Jonathan',
-    lastName: 'Raposo',
+    firstName: process.env.ADMIN_FIRSTNAME,
+    lastName: process.env.ADMIN_LASTNAME,
     email: process.env.ADMIN_EMAIL,
     password: bcrypt.hashSync(process.env.ADMIN_PASSWORD, salt),
     role: "admin",
