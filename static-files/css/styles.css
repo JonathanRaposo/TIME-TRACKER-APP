@@ -336,7 +336,7 @@ table{
 
 #employee-details{
   width: 400px;
-  height: 230px;
+  height: 260px;
   margin: 30px auto;
   box-shadow: 1px 3px 5px #9f9e9e;
   border-radius: 4px;
@@ -355,7 +355,33 @@ table{
   text-align: left;
   padding-left: 10px;
 }
-
+#employee-details #online span{
+   color: #04af04
+}
+#employee-details #offline span{
+  color:#ff0000;
+}
 #hoursWorked{
   font-size: 25px;
+}
+
+
+/* clockedin employee list styles */
+
+#online-employee-list{
+  width: 400px;
+  margin: 50px auto;
+  padding-left: 0;
+  text-align: center;
+  list-style: none;
+ 
+}
+#online-employee-list li{
+  padding: 10px;
+}
+#online-employee-list .online-employee span{
+  color: #04af04
+}
+#online-employee-list .offline-employee span{
+  color:#ff0000;
 }

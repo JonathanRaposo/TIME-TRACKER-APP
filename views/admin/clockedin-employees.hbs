@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+    <nav id="admin-dashboard">
+        <div>
+            <a href="/admin/dashboard">Dashboard</a>
+        </div>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/admin/employees">Employees</a>
+            </li>
+               <li>
+                <a href="/admin/employees/add">Add Employee</a>
+            </li>
+            <li>
+                <a href="/admin/manage">Manage</a>
+            </li>
+         
+            
+            <li>
+                <form action="/admin/logout" method="POST">
+                 <button type= "submit" class="logout-link">Log out</button>
+                 </form>
+            </li>
+        </ul>
+    </nav>
+
+
+
+     <ul id="online-employee-list">
+
+            {{#if online}}
+               {{#each online}}
+                <li class="online-employee">{{firstName}} {{lastName}} <span>Online</span></li>
+               {{/each}}
+            {{/if}}
+
+                 {{#if offline}}
+               {{#each offline}}
+                <li class="offline-employee">{{firstName}} {{lastName}} <span>Offline</span></li>
+               {{/each}}
+            {{/if}}
+     </ul>
+
+
+</body>
+</html>

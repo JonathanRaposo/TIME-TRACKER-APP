@@ -45,6 +45,12 @@
           <p><strong>Email: </strong>{{user.email}}</p>
           <p><strong>Hourly Rate: </strong>${{user.hourlyRate}}</p>
           <p><strong>Year hired: </strong>{{user.hireDate}}</p>
+          {{#if status}}
+           <p id="online"><strong>Status: </strong><span>Online</span></p>
+           {{else}}
+           <p id="offline"><strong>Status: </strong><span>Offline</span></p>
+
+          {{/if}}
         
       </div>
 

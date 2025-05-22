@@ -23,10 +23,6 @@ function toJsonFormat(obj) {
 const WORK_SESSION_PATH = path.join(__dirname, 'workSessions.json')
 
 
-const workSessions = connect(WORK_SESSION_PATH);
-
-
-
 class MemoryStorage {
     constructor(workSessions) {
         this.workSessions = workSessions || {};
@@ -53,6 +49,9 @@ class MemoryStorage {
         touch(WORK_SESSION_PATH, this.workSessions);
     }
 
+    async getClockedInEmployees() {
+        return this.workSessions;
+    }
     resetWorkSessions() {
         this.workSessions = {};
         touch(WORK_SESSION_PATH, this.workSessions);
