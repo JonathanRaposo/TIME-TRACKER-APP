@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+    <nav>
+        <ul>
+          
+         <li>
+            <a href="/employee/profile">Profile</a>
+         </li>
+         {{!-- <li>
+            <a href="/employee/schedule">Schedule</a>
+         </li> --}}
+        </ul>
+    </nav>
+
+
+    {{#if user}}
+ <div id="profile-wrapper">
+   
+    <p id="hoursWorked"><strong>Hours worked:</strong> {{user.hoursWorked}} hrs</p>
+     
+ </div>
+
+
+{{/if}}
+ 
+
+</body>
+</html>
+

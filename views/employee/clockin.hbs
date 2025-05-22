@@ -1,0 +1,22 @@
+ 
+    
+<form action="/employee/clockin"  method="POST" id="clockin-form">
+ 
+ <h2>Clock in</h2>
+    <label for="id">Employee Id</label>
+    <input type="text" id="id" name="id">
+
+     <label for="password">Password</label>
+     <input type="password" id="password" name="password">
+ 
+     <button>clock in</button>
+ 
+     <a href="/employee/clockout">Already clocked in? Clock out</a>
+        {{#if errorMessage}}
+            <p class="error">{{errorMessage}}</p>
+        {{/if}}
+
+</form>
+
+
+ 

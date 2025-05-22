@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+    <nav id="admin-dashboard">
+        <div>
+            <a href="/admin/dashboard">Dashboard</a>
+        </div>
+        <ul>
+            <li>
+                <a href="/admin/dashboard">Back</a>
+            </li>
+               <li>
+                <a href="/admin/employees">Employees</a>
+            </li>
+            <li>
+                <a href="/admin/manage">Manage</a>
+            </li>
+         
+            
+            <li>
+                <form action="/admin/logout" method="POST">
+                 <button type= "submit" class="logout-link">Log out</button>
+                 </form>
+            </li>
+        </ul>
+    </nav>
+    
+   
+
+{{#if users}}
+
+  
+   <table>
+     <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Hourly Rate</th>
+          <th>Hours Worked</th>
+          <th>Total Pay</th>
+          <th></th>
+        </tr>
+     </thead>
+    <tbody>
+          {{#each users}}
+      <tr>
+            <td>{{id}}</td>
+            <td>{{firstName}} {{lastName}}</td>
+            <td>{{email}}</td>
+            <td>{{hourlyRate}}</td>
+            <td>{{hoursWorked}}</td>
+            <td>${{accumulatedPay}}</td>
+            <td><a href="/admin/employees/{{id}}/edit" id="edit-btn"> Edit</a></td>
+        </tr>
+
+          {{/each}}
+    </tbody>
+  </table>
+  <p class="back"><a href="/admin/manage">Back</a></p>
+
+
+
+ {{else}}
+ <h3>Finder</h3>
+  
+<form action="/admin/employees/search">
+   <table>
+     <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Last Name</th>
+          <th>email</th>
+          <th></th>
+        </tr>
+     </thead>
+    <tbody>
+        <tr>
+            <td><input type="number" name="employeeId" id="employeeId"/></td>
+            <td><input type="text" name="lastName" id="employee-lastName" placeholder="Enter last name"/></td>
+            <td><input type="text" name="email" id="employee-email" placeholder="Enter email"/></td>
+            <td><button type="submit" id="search-btn">Search</button></td>
+        </tr>
+    </tbody>
+  </table>
+   <p class=""><a href="/admin/manage">Back</a></p>
+  
+</form>
+{{#if resultMessage}}
+ <p id="resultMessage">{{resultMessage}}</p>
+{{/if}}
+
+{{/if}}
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+    <nav id="admin-dashboard">
+        <div>
+            <a href="/admin/dashboard">Dashboard</a>
+        </div>
+        <ul>
+            <li>
+                <a href="/admin/dashboard">Back</a>
+            </li>
+               <li>
+                <a href="/admin/employees">Employees</a>
+            </li>
+            <li>
+                <a href="/admin/manage">Manage</a>
+            </li>
+         
+            
+            <li>
+              <form action="/admin/logout" method="POST">
+                 <button type= "submit" class="logout-link">Log out</button>
+                 </form>
+            </li>
+        </ul>
+    </nav>
+    
+   
+
+{{#if user}}
+
+  <form action="/admin/employees/{{user.id}}/edit" method="POST">
+   <table id="update-table">
+     <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>email</th>
+          <th>Hourly Rate</th>
+          <th>Hours Worked</th>
+          <th>Total Pay</th>
+          <th></th>
+        </tr>
+     </thead>
+    <tbody>
+        <tr>
+            <td>{{user.id}}</td>
+            <td><input type="text" name="firstName" id="" value="{{user.firstName}}"/></td>
+            <td><input type="text" name="lastName" id="" value="{{user.lastName}}"/></td>
+            <td><input type="text" name="email" id="employee-email" value="{{user.email}}"/></td>
+            <td><input type="text" name="hourlyRate" id="employee-rate" value="{{user.hourlyRate}}"/></td>
+            <td><input type="text" name="hoursWorked" id="employee-hoursWorked" value="{{user.hoursWorked}}"/></td>
+            <td>{{user.accumulatedPay}}</td>
+            <td><button type="submit" id="edit-btn">Update</button></td>
+              
+        </tr>
+    </tbody>
+  </table>
+ 
+</form>
+
+ <form action="/admin/employees/{{user.id}}/delete" method="POST" id="delete-form">
+    <button type="submit" id="delete-btn">Delete Employee</button>
+ </form>
+            
+  <p class=""><a href="/admin/manage">Back</a></p>
+  
+ {{/if}}
+ 
+
+</body>
+</html>

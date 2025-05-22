@@ -1,0 +1,361 @@
+
+body{
+    margin: 0 ;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+a{
+    color:#000;
+    text-decoration:none;
+}
+h1,h2,h3,h4 {
+    text-align: center;
+    font-family: inherit;
+}
+nav, #admin-dashboard{
+    width: 100%;
+    height:100px;
+    background-color: rgba(211, 211, 211, 0.8);
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    ;
+}
+#admin-dashboard{
+    justify-content: space-between;
+}
+#admin-dashboard div{
+    margin-left: 30px;
+}
+#admin-dashboard div a{
+   text-transform: uppercase; 
+}
+button, input,select{
+    font: inherit;
+}
+
+nav ul {
+    margin-top: 0;
+    margin-bottom:0;
+    margin-right:20px;
+    padding-left: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    width:130px;
+    text-align: center;
+    padding: 6px;
+    transition: text-decoration 0.5s;
+
+}
+
+nav ul li:hover{
+  text-decoration: underline;
+
+}
+nav ul li a ,
+nav ul form button{
+    text-transform: uppercase;
+}
+nav ul form button{
+    width:100px;
+    padding:4px 8px;
+    background-color:  rgba(211, 211, 211, 0.8);
+    border:none;
+    border-radius: 4px;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+
+}
+
+/* Home Page styles  */
+#homePageBg{
+    width:100%;
+    height: 100vh;
+    background-image: url('/images/openSpace.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+input {
+    width:200px;
+    padding: 6px;
+    border: 1px solid #cdcdcd;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* form styles */
+
+#login-form,
+#clockin-form,
+#signup-form{
+    margin: 30px auto;
+    width: 380px;
+}
+#login-form label,
+#clockin-form label,
+#signup-form label{
+    color: #666;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
+    width:100%;
+}
+#login-form input,
+#login-form button,
+#clockin-form input,
+#clockin-form button,
+#signup-form input,
+#signup-form button {
+    box-sizing: border-box;
+    font-size: 14px;
+    outline:0;
+    padding: 4px;
+    margin-bottom: 20px;
+    width:100%;
+}
+#login-form button,
+#clockin-form button,
+#signup-form button{
+    background: #43a3e6;
+    border: 1px solid #43a3e6;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease background;
+    width: 100%;
+    
+}
+#login-form button:hover{
+    background: #fff;
+    color:#43a3e6;
+}
+
+#clockin-form button:hover{
+    background: #fff;
+    color:#43a3e6;
+}
+#signup-form button:hover{
+    background: #fff;
+    color:#43a3e6;
+}
+#login-form a,
+#signup-form a,
+#clockin-form a{
+    display: block;
+    text-align: center;
+    transition: text-decoration .5s;
+}
+#login-form a:hover{
+    text-decoration: underline;
+}
+
+#signup-form a:hover{
+    text-decoration: underline;
+}
+#clockin-forma:hover{
+    text-decoration: underline;
+}
+.error{
+    background: #f02b63;
+    box-sizing: border-box;
+    color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+.back:hover{
+    text-decoration: underline;
+}
+
+/* profile styles */
+
+#profile-wrapper.dark{
+    width: 100%;
+    height: 100vh;
+    background-color: #323131;
+}
+p{
+    text-align: center;
+}
+
+#refresh-page-btn{
+    width: 150px;
+    display: block;
+    padding: 4px 8px;
+    margin: 30px auto;
+    border-radius: 4px;
+    border: 1px solid #cdcdcd;
+    
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropbtn:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+  }
+  
+  .dropdown-content a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+    /* table styles */
+
+table{
+    width: 90%;
+    height:60px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1)
+}
+   thead{
+     background-color: rgba(211, 211, 211, 0.8);
+     text-transform: uppercase;
+     border: 1px solid #ddd;
+
+  
+   }
+   td,th{
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+
+   }
+   table #employeeId{
+    width:100px;
+   }
+   table #employee-lastName{
+    border: none;
+   }
+   table #employee-email{
+    border: none;
+   }
+  table #search-btn, 
+  #delete-form #delete-btn,
+  table #edit-btn{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border:none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #43a3e6;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color ease 0.5s;
+  }
+  table #search-btn:hover{
+    background-color: #0081dd;
+  }
+  table #edit-btn:hover{
+    background-color: #0081dd;
+
+  }
+  #delete-form #delete-btn{
+    background-color: red;
+  }
+  #delete-form #delete-btn:hover{
+    background-color: #bc0606;
+  }
+  #delete-form {
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+  }
+  #resultMessage{
+    color:red;
+    text-transform: uppercase;
+  }
+ 
+  /* employee list styles */
+
+  #employee-list{
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+    list-style: none;
+    padding-left: 0;
+ 
+    
+  }
+
+  #employee-list li{
+    text-transform: uppercase;
+    padding: 8px;
+  }
+
+  #employee-list li a:hover{
+    text-decoration: underline;
+  }
+  #employee-list-heading{
+    text-transform: uppercase;
+  }
+
+  
+/* employee details styles */
+
+#employee-details{
+  width: 400px;
+  height: 230px;
+  margin: 30px auto;
+  box-shadow: 1px 3px 5px #9f9e9e;
+  border-radius: 4px;
+
+}
+#employee-details header{
+  background-color: #43a3e6;;
+  width: 100%;
+  height:30px;
+}
+#employee-details-heading{
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+#employee-details p{
+  text-align: left;
+  padding-left: 10px;
+}
+
+#hoursWorked{
+  font-size: 25px;
+}

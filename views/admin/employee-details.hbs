@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+
+    
+   {{#if user}}
+
+  <nav id="admin-dashboard">
+        <div>
+            <a href="/admin/dashboard">Dashboard</a>
+        </div>
+        <ul>
+            {{!-- <li>
+                <a href="/">Back</a>
+            </li> --}}
+              <li>
+                <a href="/admin/employees">Employees</a>
+            </li>
+            <li>
+                <a href="/admin/manage/employee?id={{user.id}}">Manage</a>
+            </li>
+          
+            <li>
+                <form action="/admin/logout" method="POST">
+                 <button type= "submit" class="logout-link">Log out</button>
+                 </form>
+            </li>
+        </ul>
+    </nav>
+
+
+         <h2 id="employee-details-heading">Employee details</h2>
+      <div id="employee-details">
+         <header></header>
+         <p><strong>ID: </strong>{{user.id}}</p>
+          <p><strong>Name: </strong>{{user.firstName}} {{user.lastName}}</p>
+          <p><strong>Email: </strong>{{user.email}}</p>
+          <p><strong>Hourly Rate: </strong>${{user.hourlyRate}}</p>
+          <p><strong>Year hired: </strong>{{user.hireDate}}</p>
+        
+      </div>
+
+  
+  
+   {{/if}}
+ 
+
+</body>
+</html>

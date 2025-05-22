@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+   {{#if user}}
+
+
+  <nav id="admin-dashboard">
+        <div>
+            <a href="/admin/dashboard">Dashboard</a>
+        </div>
+        <ul>
+            <li>
+                <a href="/admin/employees">Employees</a>
+            </li>
+            <li>
+                <a href="/admin/manage">Manage</a>
+            </li>
+          
+            <li>
+                 <form action="/admin/logout" method="POST">
+                 <button type= "submit" class="logout-link">Log out</button>
+                 </form>
+            </li>
+        </ul>
+    </nav>
+
+   <h2>Welcome Mr. {{user.lastName}}</h2>
+    {{else}}
+    <h2>Something went wrong.</h2>
+   {{/if}}
+ 
+
+</body>
+</html>
