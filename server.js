@@ -11,6 +11,7 @@ const isAuthenticated = require('./middleware/isAuthenticated.js');
 
 const indexRoute = require('./routes/index.route.js');
 app.use('/', indexRoute);
+
 const authRoutes = require('./routes/auth/auth.routes.js');
 app.use('/', authRoutes);
 

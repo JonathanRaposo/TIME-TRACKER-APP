@@ -3,8 +3,9 @@ const path = require('path');
 
 
 function generateId() {
-    const id = Math.random() * this.db.length + 1;
-    return String(id).padStart(3, '0');
+    const randomNum = Math.random() * 20000;
+    const id = Math.floor(randomNum)
+    return id.toString()
 }
 
 function connectDB(filePath) {
