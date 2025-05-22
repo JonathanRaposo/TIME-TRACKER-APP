@@ -179,7 +179,7 @@ router.get('/admin/employees/:id', async function (req, res) {
         const hireDate = new Date(employee?.createdAt).getFullYear()
         const data = Object.assign({}, employee, { hireDate: hireDate });
         res.render('admin/employee-details', { user: data, status: online, layout: false })
-        console.log(employee)
+
     } catch (err) {
         console.log(err)
     }
