@@ -26,7 +26,7 @@ router.get('/employee/hours', isAuthenticated, async function (req, res) {
 })
 
 router.post('/employee/logout', function (req, res) {
-    console.log('hit log out route')
+
     res.clearCookie('authToken');
     res.clearCookie('theme');
     res.redirect('/')

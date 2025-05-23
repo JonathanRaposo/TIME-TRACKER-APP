@@ -10,20 +10,19 @@ const dbService = new DBService(db);
 const jwt = require('jsonwebtoken');
 
 
-const { isLoggedIn, isLoggedOut } = require('../../middleware/route-guard.js');
+const { isLoggedOut } = require('../../middleware/route-guard.js');
 
-
-router.get('/signup', isLoggedOut, (req, res) => {
-    res.render('auth/signup.hbs');
+router.get('/signup', (req, res) => {
+    res.render('auth/signup.hbs', { layout: false });
 });
 
-router.post('/signup', isLoggedOut, async function (req, res, next) {
-   
+router.post('/signup', async function (req, res, next) {
+
     const { firstName, lastName, email, password } = req.body;
 
     // MAKE SURE ALL FIELDS ARE PROVIDED
     if (!firstName || !lastName || !email || !password) {
-        res.status(400).render('auth/signup.hbs', { errorMessage: 'All fields must be provided.' });
+        res.status(400).render('auth/signup.hbs', { errorMessage: 'All fields must be provided.', layout: false });
         return;
     }
 
@@ -31,13 +30,13 @@ router.post('/signup', isLoggedOut, async function (req, res, next) {
 
     const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     if (!email_regex.test(email)) {
-        res.status(400).render('auth/signup.hbs', { errorMessage: 'Provide a valid email address' });
+        res.status(400).render('auth/signup.hbs', { errorMessage: 'Provide a valid email address', layout: false });
         return;
     }
     // PASSWORD VALIDATION
     const pass_regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
     if (!pass_regex.test(password)) {
-        res.status(400).render('auth/signup.hbs', { errorMessage: 'Password must have at least 6 characters and contain at least one number, one lowercase and one uppercase letter.' });
+        res.status(400).render('auth/signup.hbs', { errorMessage: 'Password must have at least 6 characters and contain at least one number, one lowercase and one uppercase letter.', layout: false });
         return;
     }
 
@@ -45,39 +44,16 @@ router.post('/signup', isLoggedOut, async function (req, res, next) {
 
         const employee = await dbService.findOne({ email: email })
         if (employee) {
-            return res.status(404).render('auth/signup.hbs', { errorMessage: 'Email is already registered. Try other one.' })
+            return res.status(404).render('auth/signup.hbs', { errorMessage: 'Email is already registered. Try other one.', layout: false })
         }
 
         const newUser = { firstName, lastName, email, password: hash(password, { saltRounds: 12 }) };
         const user = await dbService.create(newUser);
-        const payload = {
-            id: user.id,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            role: user.role
-        };
-    
-        const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, { expiresIn: '1h' });
-        res.cookie('authToken', authToken, {
-            maxAge: 1000 * 60 * 60,
-            httpOnly: true,
-            secure: false,
-            sameSite: 'lax'
-        });
-        res.cookie('theme', 'dark');
-
-        if (user.role === 'employee') {
-            res.redirect('/employee/profile')
-            return;
-        }
-        if (user.role === 'admin') {
-            res.redirect('/admin/dashboard')
-            return;
-        }
+        return res.redirect(`/admin/manage`)
 
     } catch (err) {
         console.log('error:', err)
-        res.status(500).render('auth/signup.hbs', { errorMessage: 'Something went wrong. Try again.' });
+        res.status(500).render('auth/signup.hbs', { errorMessage: 'Something went wrong. Try again.', layout: false });
 
     }
 
